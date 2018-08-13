@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Отправка формы{% endblock title %}
+
+{% block content %}
+    <p>Отправка формы</p>
+    <form method="post" action="/content/form-res/">{% csrf_token %}
+        Текст 1 <input type="text">
+        Текст 2 <input type="text">
+        <input type="submit" value="Отправить">
+    </form>
+{% endblock content %}

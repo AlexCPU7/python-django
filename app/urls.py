@@ -21,5 +21,4 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('content/', include('content.urls')),
     path('', include('page_one.urls')),
-
 ]

@@ -5,4 +5,13 @@ from django.http import HttpResponse
 
 def type(request):
     return HttpResponse('type')
-# Create your views here.
+
+def form(request):
+    return render(request, 'form.html')
+
+def form_res(request):
+    if request.POST:
+        return HttpResponse('Request is POST')
+    else:
+        return HttpResponse('Request is GET')
+

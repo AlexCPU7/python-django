@@ -7,7 +7,7 @@
 {% block content %}
 <h1>{{ new.title }}</h1>
 <hr>
-<p>{{ new.text }}</p>
+<p>{{ new.text|safe }}</p>
 <hr>
 <p>Категория - {{ new.category }}</p>
 <p>Автор: {{ new.user }} - {{ new.created }}</p>

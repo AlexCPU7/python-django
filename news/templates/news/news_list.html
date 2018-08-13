@@ -11,7 +11,7 @@
             {{ new.title }}
         </a>
     </h1>
-    <p>{{ new.text_anons }}</p>
+    <p>{{ new.text_anons|safe }}</p>
     <p>{{ new.created }}</p>
 {% endfor %}
 {% endblock content %}
