@@ -1,12 +1,16 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="descr" content="{% block descr %}Новости{% endblock descr %}">
     <meta name="keywords" content="{% block keywords %}Новости{% endblock keywords %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/script.js' %}"></script>
     <title>{% block title %}Новости{% endblock title %}</title>
 </head>
-<body style="background: azure">
+<body>
     {% block content %}
 
     {% endblock content %}
