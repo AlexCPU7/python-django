@@ -8,6 +8,6 @@ admin.site.register(Category)
 admin.site.register(Tag)
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('user', 'new', 'created', 'moderation')
+    list_display = ('user', 'new', 'text', 'created', 'moderation')
 
 admin.site.register(Comments, CommentAdmin)

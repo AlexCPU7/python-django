@@ -5,15 +5,33 @@
 {% block title %}{{ new.title }}{% endblock title %}
 
 {% block content %}
-<h1>{{ new.title }}</h1>
-<hr>
-<p>{{ new.text|safe }}</p>
-<hr>
-<p>Категория - {{ new.category }}</p>
-<p>Автор: {{ new.user }} - {{ new.created }}</p>
-<p>Теги:
-    {% for tag in new.tags.all %}
-        {{ tag.title }}
+    <h1>{{ new.title }}</h1>
+    <hr>
+    <p>{{ new.text|safe }}</p>
+    <hr>
+    <p>Категория - {{ new.category }}</p>
+    <p>Автор: {{ new.user }} - {{ new.created }}</p>
+    <p>Теги:
+        {% for tag in new.tags.all %}
+            {{ tag.title }}
+        {% endfor %}
+    </p>
+    <hr>
+    <h2>Комментарии</h2>
+    {% for comment in comments %}
+        <p>
+            Пользователь - {{ comment.user }} <br>
+            {{ comment.text|safe }} <br>
+            Добавлен - {{ comment.created}}
+        </p>
     {% endfor %}
-</p>
+    {% if user.is_active %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ comm_form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+    {% else %}
+        <h4>Что бы оставить комментарий вам необходимо авторизоваться</h4>
+    {% endif %}
 {% endblock content %}
