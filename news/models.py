@@ -43,5 +43,6 @@ class News(models.Model):
         verbose_name_plural = 'Статьи'
 
     def __str__(self):
-        return self.title
+        #return self.title
+        return 'Автор %s название %s'%(self.user, self.title)
 

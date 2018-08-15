@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'news',
     'content',
+    'books'
 ]
 
 MIDDLEWARE = [
