@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block descr %}{{ new.descr }}{% endblock descr %}
+{% block keywords %}{{ new.keywords }}{% endblock keywords %}
+{% block title %}{{ new.title }}{% endblock title %}
+
+{% block content %}
+    <h1>{{ book.title }}</h1>
+    <hr>
+    <p>{{ book.text|safe }}</p>
+    <hr>
+    <p>Категория - {{ book.category }}</p>
+    <p>Автор: {{ book.user }} - {{ book.created }}</p>
+    <p>Теги:
+        {% for tag in book.tags.all %}
+            {{ tag.title }}
+        {% endfor %}
+    </p>
+{% endblock content %}

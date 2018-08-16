@@ -1,8 +1,16 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Book
+
 
 def book_catalog(request):
-    return HttpResponse('this catalog')
+    books = Book.objects.all()
+    return render(request, 'books/book_catalog.html', {
+        'books': books
+    })
+
 
 def book_item(request, id):
-    return HttpResponse('product: ' + str(id))
+    book = get_object_or_404(Book, id=id)
+    return render(request, 'books/book_item.html', {
+        'book': book
+    })

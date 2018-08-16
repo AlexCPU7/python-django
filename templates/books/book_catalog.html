@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block descr %}{{ new.descr }}{% endblock descr %}
+{% block keywords %}{{ new.keywords }}{% endblock keywords %}
+{% block title %}{{ new.title }}{% endblock title %}
+
+{% block content %}
+{% for book in books %}
+    <h1>
+        <a href="{% url 'product' id=book.id %}" target="_blank">
+            {{ book.title }}
+        </a>
+    </h1>
+{% endfor %}
+{% endblock content %}
