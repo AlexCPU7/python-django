@@ -139,10 +139,12 @@ STATIC_URL = '/static/'
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [STATIC_DIR]
 
+TEST_URL = '/test/'
+TEST_DIR = os.path.join(BASE_DIR, 'node_modules')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media/'
 
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/accounts/login/'
-EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackends'
+#EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackends'
