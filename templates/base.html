@@ -6,19 +6,59 @@
     <meta charset="UTF-8">
     <meta name="descr" content="{% block descr %}Python-django{% endblock descr %}">
     <meta name="keywords" content="{% block keywords %}Python-django{% endblock keywords %}">
-
     <link href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
-
-    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-
     <title>{% block title %}Python-django{% endblock title %}</title>
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Python</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+                aria-controls="navbarsExample04" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse show" id="navbarsExample04" style="">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/news">Новости</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/catalog/book">Книги</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown04"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <a class="dropdown-item" href="#">test1</a>
+                        <a class="dropdown-item" href="#">test2</a>
+                        <a class="dropdown-item" href="#">test3</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</header>
+
+<div class="container container-castom">
     {% block content %}
 
     {% endblock content %}
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">My test project on Django Python</span>
+    </div>
+</footer>
+
+<script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
