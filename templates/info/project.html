@@ -1,0 +1,12 @@
+{% extends 'info/base.html' %}
+
+{% block descr %}О проекте{% endblock descr %}
+{% block keywords %}О проекте{% endblock keywords %}
+{% block title %}О проекте{% endblock title %}
+
+{% block content %}
+    <h1>{{ info.title }}</h1>
+    <div>
+        {{ info.text|safe }}
+    </div>
+{% endblock content %}
