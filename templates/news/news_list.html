@@ -1,9 +1,5 @@
 {% extends 'news/base.html' %}
 
-{% block descr %}{{ new.descr }}{% endblock descr %}
-{% block keywords %}{{ new.keywords }}{% endblock keywords %}
-{% block title %}{{ new.title }}{% endblock title %}
-
 {% block content %}
 {% for new in news %}
     <h1>

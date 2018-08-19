@@ -5,12 +5,14 @@ from .models import Book
 def book_catalog(request):
     books = Book.objects.all()
     return render(request, 'books/book_catalog.html', {
-        'books': books
+        'books': books,
     })
 
 
 def book_item(request, id):
     book = get_object_or_404(Book, id=id)
+    language = book.array_language[book.language - 1][1]
     return render(request, 'books/book_item.html', {
-        'book': book
+        'book': book,
+        'language': language
     })

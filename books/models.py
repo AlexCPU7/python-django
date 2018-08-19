@@ -52,7 +52,8 @@ class Book(models.Model):
     author = models.ManyToManyField(Author, verbose_name='Автор')
     image = models.ImageField('Изображение', upload_to='images', blank=True)
     file = models.FileField('Файл', upload_to='files', blank=True)
-    desc = RichTextField('Описание', max_length=2000, blank=True)
+    link = models.CharField('Ссылка/источник', max_length=400, blank=True)
+    desc = RichTextField('Описание', max_length=50000, blank=True)
     language = models.PositiveSmallIntegerField('Язык', choices=array_language)
     pages = models.PositiveSmallIntegerField('Колличество страниц', validators=[
         MinValueValidator(1),
