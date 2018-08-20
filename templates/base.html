@@ -22,13 +22,13 @@
         <div class="navbar-collapse collapse show" id="navbarsExample04" style="">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/news">Новости</a>
+                    <a class="nav-link" href="{% url 'list_news' %}">Новости</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/catalog/book/">Книги</a>
+                    <a class="nav-link" href="{% url 'catalog' %}">Книги</a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="/project/">О проекте</a>
+                    <a class="nav-link" href="{% url 'index' %}">О проекте</a>
                 </li>
                  <li class="nav-item">
                     <a class="nav-link" href="/admin/" target="_blank">Админка</a>
