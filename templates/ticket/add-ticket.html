@@ -1,0 +1,14 @@
+{% extends 'ticket/base.html' %}
+
+{% block descr %}Добавить тикет{% endblock descr %}
+{% block keywords %}Добавить тикет{% endblock keywords %}
+{% block title %}Добавить тикет{% endblock title %}
+
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock content %}
