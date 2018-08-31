@@ -1,0 +1,24 @@
+{
+  "name": "django",
+  "version": "1.0.0",
+  "description": "",
+  "main": "../manage.py",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexCPU7/python-django.git"
+  },
+  "author": "alexcpu7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexCPU7/python-django/issues"
+  },
+  "homepage": "https://github.com/AlexCPU7/python-django#readme"
+}
