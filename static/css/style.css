@@ -19,3 +19,25 @@ body {
 .container-castom{
     padding: 40px 0 30px 0;
 }
+
+.link-back{
+    margin: 15px 0 20px 0;
+}
+
+.note{
+    width: 100%;
+    text-align: left;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #d2d1d1;
+    padding: 8px;
+}
+
+.note-bot{
+    background: rgb(255, 255, 255);
+    padding: 15px 10px;
+    border-radius: 0 0 5px 5px;
+    border-bottom: 1px solid rgb(210, 209, 209);
+    border-left: 1px solid rgb(210, 209, 209);
+    border-right: 1px solid rgb(210, 209, 209);
+}

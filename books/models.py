@@ -4,6 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
+
 class Type(models.Model):
     title = models.CharField('Название', max_length=100)
     create_dt = models.DateTimeField('Дата создания', auto_now_add=True)
@@ -41,6 +42,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Book(models.Model):
     array_language = (

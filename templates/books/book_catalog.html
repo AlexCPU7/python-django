@@ -1,10 +1,14 @@
 {% extends 'books/base.html' %}
 
-{% block descr %}{{ new.descr }}Каталог книг{% endblock descr %}
-{% block keywords %}{{ new.keywords }}Каталог книг{% endblock keywords %}
-{% block title %}{{ new.title }}Каталог книг{% endblock title %}
+{% block descr %}Каталог книг{% endblock descr %}
+{% block keywords %}Каталог книг{% endblock keywords %}
+{% block title %}Каталог книг{% endblock title %}
 
 {% block content %}
+    <h1>Каталог книг</h1>
+    <div class="link-back">
+        <a class="btn btn-primary" href="/catalog/add_book/">Добавить новую книгу</a>
+    </div>
     <div class="row">
         {% for book in books %}
             <div class="col-md-4">
@@ -23,10 +27,15 @@
                          <a href="{% url 'product' id=book.id %}">
                             <p class="card-text">{{ book.title }}</p>
                         </a>
-                         {{ book.year }} год
+                         {{ book.year }} год <br>
+                        <img src="{{ book.image|default_if_none:'#' }}" />
                     </div>
                 </div>
             </div>
         {% endfor %} <br><br>
+    </div>
+    <div class="example">
+        <button class="note" data-toggle="collapse" data-target="#hide-me" aria-expanded="true">Collapse Bootstrap.js</button>
+        <div id="hide-me" class="note-bot collapse" aria-expanded="true" style="">Анонимус — посетители анонимных борд, которые почти все являются анонимами.</div>
     </div>
 {% endblock content %}

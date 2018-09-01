@@ -1,0 +1,21 @@
+{% extends 'books/base.html' %}
+
+{% block descr %}{{ title }}{% endblock descr %}
+{% block keywords %}{{ title }}{% endblock keywords %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+    <h1>{{ title }}</h1>
+    <div class="link-back">
+        <a class="btn btn-primary" href="/catalog/book/">Назад</a>
+    </div>
+    <div class="add-book-form">
+        <form method="post">
+            {% csrf_token %}
+            {{ form_book.as_p }}
+            <input class="btn btn-outline-success" type="submit" value="Добавить книгу">
+        </form>
+    </div>
+
+{% endblock content %}

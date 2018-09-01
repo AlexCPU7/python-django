@@ -1,6 +1,5 @@
 .idea
 venv
 *.pyc
-/static
 /media
 /static/node_modules/
