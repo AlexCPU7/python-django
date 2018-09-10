@@ -6,6 +6,7 @@ from news.models import News, Category, Tag, Comments
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('user', 'new', 'text', 'created', 'moderation')
+    list_editable = ['moderation']
 
 
 admin.site.register(News)

@@ -53,7 +53,7 @@ class Comments(models.Model):
     new = models.ForeignKey(News, verbose_name='Новость', on_delete=models.CASCADE)
     text = RichTextField('Комментарий')
     created = models.DateTimeField('Дата добавления', auto_now_add=True, null=True)
-    moderation = models.BooleanField('Модерация', default=False)
+    moderation = models.BooleanField('Модерация', default=True)
 
     class Meta:
         verbose_name = 'Комментарий'

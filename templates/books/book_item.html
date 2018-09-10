@@ -9,7 +9,12 @@
 
     <h1>{{ book.title }}</h1><hr>
 
-    <p>{{ book.desc|safe }}</p><hr>
+    <hr>
+
+    <p>{{ book.desc|safe }}</p>
+    {% if book.file %}
+        <a href="{{ book.file.url }}" download>Скачать книгу</a>
+    {% endif %}<hr>
 
     <p>Категория - {{ book.type_id }}</p>
     <p>Язык - {{ language }}</p>

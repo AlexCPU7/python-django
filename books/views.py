@@ -13,9 +13,11 @@ def book_catalog(request):
 def book_item(request, id):
     book = get_object_or_404(Book, id=id)
     language = book.array_language[book.language - 1][1]
+    t = [1, 2, 3]
     return render(request, 'books/book_item.html', {
         'book': book,
-        'language': language
+        'language': language,
+        't': t
     })
 
 

@@ -87,10 +87,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'python_django',
-        'USER' : 'root',
-        'PASSWORD' : 'root',
-        'HOST' : '127.0.0.1',
-        'PORT' : '5432',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -145,7 +145,7 @@ TEST_URL = '/test/'
 TEST_DIR = os.path.join(BASE_DIR, 'node_modules')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/accounts/login/'

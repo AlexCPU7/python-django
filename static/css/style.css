@@ -2,10 +2,31 @@ html {
     position: relative;
     min-height: 100%;
 }
+
 body {
     margin-bottom: 60px;
     background: #f1ffff; /*f1ffff*/
 }
+
+input, select, select, textarea{
+    display: block;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #464a4c;
+    background-color: #fff;
+    background-image: none;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
 .footer {
     position: absolute;
     bottom: 1px;
@@ -41,3 +62,24 @@ body {
     border-left: 1px solid rgb(210, 209, 209);
     border-right: 1px solid rgb(210, 209, 209);
 }
+
+.log-reg{
+    display: block;
+    color: rgba(255,255,255,.5);
+    padding: 8px 0;
+}
+
+.btn-log-reg{
+    background: #343a40;
+    border: 0;
+    cursor: pointer
+}
+
+.book-img{
+    width: 100%;
+    display: block;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: rgba(0,0,0,.125);
+}
+

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from django.core.validators import MaxValueValidator, MinValueValidator
 
@@ -75,3 +76,16 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class UserBook(models.Model):
+    arr_status = (
+        ('Watching', 'Читаю'),
+        ('Completed', 'Прочитал'),
+        ('On-Hold', 'прочитаю позже'),
+        ('Dropped', 'Пропустить'),
+        ('Plan to Watch', 'В план')
+    )
+    user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, verbose_name='Книга', on_delete=models.CASCADE)
+    status = models.PositiveSmallIntegerField('Язык', choices=arr_status)

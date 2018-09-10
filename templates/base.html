@@ -24,8 +24,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'list_news' %}">Новости</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'catalog' %}">Книги</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown04"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Книги</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <a class="dropdown-item" href="{% url 'catalog' %}">Все книги</a>
+                        <a class="dropdown-item" href="#">test1</a>
+                        <a class="dropdown-item" href="#">test2</a>
+                        <a class="dropdown-item" href="#">test3</a>
+                    </div>
                 </li>
                  <li class="nav-item">
                     <a class="nav-link" href="{% url 'index' %}">О проекте</a>
@@ -33,20 +40,26 @@
                  <li class="nav-item">
                     <a class="nav-link" href="/admin/" target="_blank">Админка</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown04"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="#">test1</a>
-                        <a class="dropdown-item" href="#">test2</a>
-                        <a class="dropdown-item" href="#">test3</a>
-                    </div>
-                </li>
             </ul>
+            <!--
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
+            -->
+            <div class="navbar-nav mruto">
+                {% if not user.is_active %}
+                    <a class="nav-link" href="/accounts/login/">Войти</a>
+                    <span class="log-reg">/</span>
+                    <a class="nav-link" href="/accounts/signup/">Зарегистрироваться</a>
+                {% else %}
+                    <form method="post" action="/accounts/logout/">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="QpWgbPQ7iNc6uttM0iTJJ0xIDumuUt9SQ4ey3whJLDB20vWFW89pYNJpwdO4Zmec">
+                        {% csrf_token %}
+                        <button class="btn-log-reg nav-link" type="submit">{{ user }}(выйти)</button>
+                    </form>
+                {% endif %}
+            </div>
         </div>
     </nav>
 </header>
